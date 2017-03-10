@@ -3,12 +3,17 @@
 
 #define GAMMA 1.4
 
+#define SEDOV 1
+
 #define FLOAT double
-typedef struct grid_str
+typedef struct physics_grid_str
 {
   FLOAT L_x;
   FLOAT L_y;
   FLOAT L_z;
+  FLOAT delta_x;
+  FLOAT delta_y;
+  FLOAT delta_z;
   int N_x;
   int N_y;
   int N_z;
@@ -18,6 +23,6 @@ typedef struct grid_str
   FLOAT *vx;
   FLOAT *vy;
   FLOAT *vz;
-} grid;
+} physics_grid;
 
 #endif
