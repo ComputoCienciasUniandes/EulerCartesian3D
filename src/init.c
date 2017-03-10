@@ -9,6 +9,82 @@ void init_to_zero(FLOAT *p, int n_points){
   }
 }
 
+
+physics_grid * create_physics_grid(void){
+  physics_grid *G;
+  if(!(G = malloc(sizeof(physics_grid)))){
+    fprintf(stderr, "Problem with data allocation\n");fflush(stdout);
+    exit(0);
+  } 
+  
+  G->L_x=0.0;
+  G->L_y=0.0;
+  G->L_z=0.0;
+  G->delta_x=0.0;
+  G->delta_y=0.0;
+  G->delta_z=0.0;
+  G->N_x=0;
+  G->N_y=0;
+  G->N_z=0;
+  G->N_cells=0;
+  G->p=NULL;
+  G->rho=NULL;
+  G->vx=NULL;
+  G->vy=NULL;
+  G->vz=NULL;
+  return G;
+}
+
+
+U_grid * create_U_grid(void){
+  U_grid *G;
+  if(!(G = malloc(sizeof(U_grid)))){
+    fprintf(stderr, "Problem with data allocation\n");fflush(stdout);
+    exit(0);
+  } 
+  G->N_x=0.0;
+  G->N_y=0.0;
+  G->N_z=0.0;
+  G->N_cells=0.0;
+  G->U_1=NULL;
+  G->U_2=NULL;
+  G->U_3=NULL;
+  G->U_4=NULL;
+  G->U_5=NULL;
+  return G;
+}
+
+F_grid * create_F_grid(void){
+  F_grid *G;
+  if(!(G = malloc(sizeof(F_grid)))){
+    fprintf(stderr, "Problem with data allocation\n");fflush(stdout);
+    exit(0);
+  } 
+  G->N_x=0.0;
+  G->N_y=0.0;
+  G->N_z=0.0;
+  G->N_cells=0.0;
+  G->F_1_X=NULL;
+  G->F_2_X=NULL;
+  G->F_3_X=NULL;
+  G->F_4_X=NULL;
+  G->F_5_X=NULL;
+
+  G->F_1_Y=NULL;
+  G->F_2_Y=NULL;
+  G->F_3_Y=NULL;
+  G->F_4_Y=NULL;
+  G->F_5_Y=NULL;
+
+  G->F_1_Z=NULL;
+  G->F_2_Z=NULL;
+  G->F_3_Z=NULL;
+  G->F_4_Z=NULL;
+  G->F_5_Z=NULL;
+  return G;
+}
+
+
 void init_problem(physics_grid *P, U_grid *U, F_grid *F, int problem){
   
   P->L_x = 250.0;
