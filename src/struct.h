@@ -4,6 +4,13 @@
 #define GAMMA 1.4
 
 #define SEDOV 1
+#define NDIM 3
+
+#define PRESSURE 0 
+#define RHO 1
+#define VX 2
+#define VY 3
+#define VZ 4
 
 #define FLOAT double
 typedef struct physics_grid_str
@@ -18,11 +25,7 @@ typedef struct physics_grid_str
   int N_y;
   int N_z;
   int N_cells;
-  FLOAT *p;
-  FLOAT *rho;
-  FLOAT *vx;
-  FLOAT *vy;
-  FLOAT *vz;
+  FLOAT *P;
 } physics_grid;
 
 typedef struct U_grid_str{
@@ -30,36 +33,16 @@ typedef struct U_grid_str{
   int N_y;
   int N_z;
   int N_cells;
-  FLOAT *U_1;
-  FLOAT *U_2;
-  FLOAT *U_3;
-  FLOAT *U_4;
-  FLOAT *U_5;
+  FLOAT *U;
 } U_grid;
 
 
-typedef struct G_grid_str{
+typedef struct F_grid_str{
   int N_x;
   int N_y;
   int N_z;
   int N_cells;
-  FLOAT *F_1_X;
-  FLOAT *F_2_X;
-  FLOAT *F_3_X;
-  FLOAT *F_4_X;
-  FLOAT *F_5_X;
-
-  FLOAT *F_1_Y;
-  FLOAT *F_2_Y;
-  FLOAT *F_3_Y;
-  FLOAT *F_4_Y;
-  FLOAT *F_5_Y;
-
-  FLOAT *F_1_Z;
-  FLOAT *F_2_Z;
-  FLOAT *F_3_Z;
-  FLOAT *F_4_Z;
-  FLOAT *F_5_Z;
+  FLOAT *F;
 } F_grid;
 
 
