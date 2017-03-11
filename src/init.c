@@ -96,7 +96,7 @@ void init_problem(physics_grid *P, U_grid *U, F_grid *F, int problem){
   P->N_x = (int)(P->L_x/P->delta_x);
   P->N_y = (int)(P->L_y/P->delta_y);
   P->N_z = (int)(P->L_z/P->delta_z);
-  P->N_cells = P->N_x * P->N_y & P->N_z;
+  P->N_cells = P->N_x * P->N_y * P->N_z;
   
   U->N_x = P->N_x;
   U->N_y = P->N_y;
